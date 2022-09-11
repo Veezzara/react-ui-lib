@@ -1,0 +1,42 @@
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field {
+  width: 100%;
+  height: 50px;
+
+  background: #f8f8fa;
+  box-shadow: inset 0px 4px 6px rgba(36, 36, 58, 0.1);
+  color: #1e1e1e;
+  font-weight: 400;
+  font-size: 1.25rem;
+
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.field:focus {
+  outline: 1px solid #a2a9c8;
+}
+
+.field::placeholder {
+  font-weight: 300;
+  color: #a2a9c8;
+}
+
+.field::-ms-reveal {
+  display: none;
+}
+
+.label {
+  font-weight: 300;
+  font-size: 0.9rem;
+
+  color: #232239;
+}

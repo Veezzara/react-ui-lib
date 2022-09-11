@@ -1,0 +1,83 @@
+.button {
+  cursor: pointer;
+  outline: none;
+  height: 35px;
+  min-width: 140px;
+  padding: 0 35px;
+  box-sizing: border-box;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  border: 2px solid transparent;
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6),
+    2px 4px 7px rgba(0, 77, 193, 0.3);
+  border-radius: 100vmax;
+
+  transition: 0.2s;
+}
+
+.primary:enabled {
+  background: #0066ff;
+  color: #ffffff;
+}
+
+.primary:hover:enabled {
+  border: 2px solid #0066ff;
+  background: #ffffff;
+  color: #0066ff;
+}
+
+.primary:active:enabled {
+  background: #0066ff;
+  color: #ffffff;
+}
+
+.primary:disabled {
+  background: #b7b7b7;
+  color: white;
+}
+
+.secondary:enabled {
+  background: transparent;
+  border: 2px solid #0066ff;
+  color: #0066ff;
+}
+
+.secondary:hover:enabled {
+  background: #ffffff;
+  border: 2px solid #0066ff;
+  color: #0066ff;
+}
+
+.secondary:active:enabled {
+  background: #0066ff;
+  color: #ffffff;
+}
+
+.secondary:disabled {
+  border: 2px solid #a2a9c8;
+  color: #a2a9c8;
+}
+
+.danger:enabled {
+  background: #fb6e6e;
+  color: #ffffff;
+}
+
+.danger:hover:enabled {
+  border: 2px solid #fb6e6e;
+  background: #ffffff;
+  color: #fb6e6e;
+}
+
+.danger:active:enabled {
+  background: #fb6e6e;
+  color: #ffffff;
+}
+
+.danger:disabled {
+  background: transparent;
+  border: 2px solid #a2a9c8;
+  color: #a2a9c8;
+}

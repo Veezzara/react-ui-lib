@@ -1,24 +1,69 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Button, ButtonType } from "./components/ui/button/button";
+import { Divider } from "./components/ui/divider/divider";
+import { Form } from "./components/ui/form/form";
+import { Input, InputType } from "./components/ui/input/input";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <h1>UI Components</h1>
+        <h2>Input</h2>
+        <h3>Text Input</h3>
+        <Input
+          type={InputType.Text}
+          label="User"
+          placeholder="Enter username"
+        />
+        <Divider />
+        <h3>Password Input</h3>
+        <Input
+          label="Password"
+          placeholder="Enter password"
+          type={InputType.Password}
+        />
+        <h2>Button</h2>
+        <h3>Primary</h3>
+        <Button />
+        <Divider />
+        <Button disabled />
+        <h3>Secondary</h3>
+        <Button buttonType={ButtonType.Secondary} />
+        <Divider />
+        <Button buttonType={ButtonType.Secondary} disabled />
+        <h3>Danger</h3>
+        <Button buttonType={ButtonType.Danger} />
+        <Divider />
+        <Button buttonType={ButtonType.Danger} disabled />
+        <h2>Form</h2>
+        <Form
+          fieldsData={[
+            {
+              field: (
+                <Input
+                  type={InputType.Text}
+                  label="User"
+                  placeholder="Enter username"
+                />
+              ),
+            },
+          ]}
+        ></Form>
+        <h2>TODO Components</h2>
+        <ul>
+          <li>Select</li>
+          <li>PIN</li>
+          <li>Switch</li>
+          <li>Datepicker</li>
+          <li>Modal</li>
+        </ul>
+        <h2>TODO Common</h2>
+        <ul>
+          <li>Validation</li>
+          <li>Masks</li>
+        </ul>
+      </div>
     </div>
   );
 }
