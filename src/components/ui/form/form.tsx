@@ -1,53 +1,44 @@
-import { Input } from "../input/input";
+import React from "react";
+import { Button } from "../button/button";
+import { InputProps } from "../input/input";
 import styles from "./form.module.css";
 
-// export interface FormField {}
+type FieldProps = InputProps
 
-// export type FormResult = {
-//   [key: string]: string;
-// };
+export interface SubmitProps {
+  onSubmit: <T>(formData: T) => void;
+  submitLabel: string;
+}
 
-// export interface SubmitProps {
-//   onSubmit: (formData: FormResult) => void;
-//   submitLabel: string;
-// }
+export interface SecondaryActionProps {
+  onSecondaryAction: () => void;
+  secandaryActionLabel: string;
+}
 
-// export interface CancelProps {
-//   onCancel: () => void;
-//   cancelLabel: string;
-// }
-
-// export type FormProps = {
-//   header?: string;
-//   fields: FormField[];
-//   submitProps: SubmitProps;
-//   cancelProps?: CancelProps;
-// };
-
-// export function Form(props: FormProps): JSX.Element {
-//   return <form></form>;
-// }
-
-export interface FormFieldData {
-  field: JSX.Element;
-  validationFunction: (regex: RegExp) => boolean;
+export interface FormFieldData<TProps> {
+  field: (props: TProps) => JSX.Element;
+  props: TProps;
 }
 
 export interface FormProps {
-  fieldsData: FormFieldData[];
+  fieldsData: FormFieldData<FieldProps>[];
+  submitProps: SubmitProps;
+  secondaryActionProps?: SecondaryActionProps;
 }
 
-const regex = /^[a-zA-Z]+$/;
-
 export function Form(props: FormProps): JSX.Element {
-  function onFormSubmit() {}
+  function onFormSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    console.log(e);
+  }
 
   return (
     <form onSubmit={onFormSubmit}>
       {props.fieldsData.map((fieldData, index) => {
-        const field = fieldData.field;
+        const field = fieldData.field(fieldData.props);
         return <div key={index}>{field}</div>;
       })}
+      <Button text={props.submitProps.submitLabel}></Button>
     </form>
   );
 }
