@@ -3,6 +3,7 @@ import { Button, ButtonType } from "./components/ui/button/button";
 import { Divider } from "./components/ui/divider/divider";
 import { Form } from "./components/ui/form/form";
 import { Input, InputType } from "./components/ui/input/input";
+import { Select } from "./components/ui/select/select";
 import { Switch } from "./components/ui/switch/switch";
 
 function App() {
@@ -37,14 +38,29 @@ function App() {
           type={InputType.Password}
         />
         <h2>Switch</h2>
-        <Switch
-          label="Switch"
-          on="В"
-          off="О"
-          name="Switch"
-          onClick={() => {
-            console.log("Switch Toggled!");
-          }}
+        <Switch label="Switch" on="В" off="О" name="Switch" />
+        <h2>Select</h2>
+        <Select
+          label="Select"
+          placeholder="Select option"
+          options={[
+            {
+              name: "Option 1",
+              value: "1",
+            },
+            {
+              name: "Option 2",
+              value: "2",
+            },
+            {
+              name: "Option 3",
+              value: "3",
+            },
+            {
+              name: "Option 4",
+              value: "4",
+            },
+          ]}
         />
         <h2>Form</h2>
         <Form
