@@ -1,0 +1,65 @@
+.container {
+  position: relative;
+}
+
+.pickerContainer {
+  position: absolute;
+  width: 400px;
+  max-height: 420px;
+
+  background: #fdfdff;
+  border: 1px solid #ffffff;
+  box-shadow: 9px 22px 50px 6px rgba(73, 78, 101, 0.16);
+  border-radius: 16px;
+}
+
+.pickerHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.pickerHeaderDate {
+  text-transform: capitalize;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  color: #24243a;
+}
+
+.pickerDatesContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pickerDateUnit {
+  width: 100%;
+  padding: 10px 0;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 16px;
+
+  color: #24243a;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}

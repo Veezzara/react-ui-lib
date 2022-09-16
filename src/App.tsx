@@ -1,5 +1,6 @@
 import "./App.css";
 import { Button, ButtonType } from "./components/ui/button/button";
+import { Datepicker } from "./components/ui/datepicker/datepicker";
 import { Divider } from "./components/ui/divider/divider";
 import { Form } from "./components/ui/form/form";
 import { Input, InputType } from "./components/ui/input/input";
@@ -39,6 +40,8 @@ function App() {
         />
         <h2>Switch</h2>
         <Switch label="Switch" on="В" off="О" name="Switch" />
+        <h2>Datepicker</h2>
+        <Datepicker label="Datepicker" />
         <h2>Select</h2>
         <Select
           label="Select"
@@ -83,7 +86,6 @@ function App() {
         <ul>
           <li>Select</li>
           <li>PIN</li>
-          <li>Datepicker</li>
           <li>Modal</li>
         </ul>
         <h2>TODO Common</h2>
